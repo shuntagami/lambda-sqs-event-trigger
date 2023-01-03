@@ -37,7 +37,6 @@ variable "retention_in_days" {
   default     = 90
 }
 
-
 variable "description" {
   type    = string
   default = ""
@@ -53,4 +52,10 @@ variable "sqs_trigger_config" {
     sqs_arn = string
   })
   default = null
+}
+
+variable "env_vars" {
+  description = "A map that defines environment variables for the Lambda Function"
+  type        = map(string)
+  default     = {}
 }
