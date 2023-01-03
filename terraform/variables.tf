@@ -11,7 +11,7 @@ variable "AWS_DEFAULT_REGION" {
   default = "ap-northeast-1"
 }
 
-variable "S3_BUCKET" {
+variable "S3_BUCKET_NAME" {
   type = string
 }
 

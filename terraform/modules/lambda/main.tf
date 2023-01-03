@@ -20,6 +20,13 @@ resource "aws_lambda_function" "lambda_function" {
   tags = {
     cost = "lambda-sqs-event-trigger-${var.tfenv}"
   }
+
+  dynamic "environment" {
+    for_each = length(keys(var.env_vars)) == 0 ? [] : [true]
+    content {
+      variables = var.env_vars
+    }
+  }
 }
 
 /*====

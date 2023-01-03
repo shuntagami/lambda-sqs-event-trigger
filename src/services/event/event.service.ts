@@ -5,6 +5,9 @@ import { NonRetriableError } from "./../../errors/non-retriable.error";
 import type { DequeuedMessage } from "./../../interfaces/dequeued-message.interface";
 import type { SQSEvent } from "aws-lambda/trigger/sqs";
 import type { LogService } from "../log/log.service";
+import { storageService } from "../s3";
+import * as fs from "fs";
+import { Buffer } from "node:buffer";
 
 export class EventService {
   constructor(
@@ -78,6 +81,9 @@ export class EventService {
       message,
       "successfully."
     );
+
+    const buf = Buffer.from(message.payload);
+    await storageService.uploadWithBytes(buf, "sample/test.txt");
   }
 
   private mapEventToDequeuedMessages(event: SQSEvent): DequeuedMessage[] {

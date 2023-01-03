@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "node ./dist/index.js",
-    "local": "node -e \"console.log(require('./dist2/index').handler(require('./testdata/event.json')));\"",
+    "local": "node -r dotenv/config -e \"console.log(require('./dist2/index').handler(require('./testdata/event.json')));\"",
     "format": "prettier --write src",
     "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}' && prettier --check src",
     "prebuild": "rm -rf dist",
@@ -17,10 +17,12 @@
   "devDependencies": {
     "@types/aws-lambda": "^8.10.109",
     "@types/node": "^18.11.18",
+    "dotenv": "^16.0.3",
     "esbuild": "^0.16.12",
     "tsc-watch": "^6.0.0"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.241.0",
     "aws-sdk": "^2.1286.0"
   }
 }

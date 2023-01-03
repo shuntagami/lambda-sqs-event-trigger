@@ -15,7 +15,7 @@ data "aws_iam_policy_document" "s3" {
   statement {
     sid       = "AllowS3Permissio0ns"
     effect    = "Allow"
-    resources = ["arn:aws:s3:::${var.S3_BUCKET}/*"]
+    resources = ["arn:aws:s3:::${var.S3_BUCKET_NAME}/*"]
 
     actions = [
       "s3:PutObject",
@@ -96,5 +96,8 @@ module "lambda_sqs_event_trigger" {
   lambda_arn    = module.role.arn
   sqs_trigger_config = {
     sqs_arn = module.sqs.arn
+  }
+  env_vars = {
+    "S3_BUCKET_NAME" = var.S3_BUCKET_NAME
   }
 }
