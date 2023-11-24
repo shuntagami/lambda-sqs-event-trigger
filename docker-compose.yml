@@ -10,4 +10,4 @@ services:
       - ./localstack:/var/lib/localstack
       - ./aws:/etc/localstack/init/ready.d
     ports:
-      - 4566:4566
+      - 4567:4566
