@@ -24,6 +24,7 @@ $ cd terraform && make apply
 
 ```
 $ docker compose up -d localstack
+$ ./aws/buckets.sh
 $ npm run local
 $ curl -O http://localhost:4566/shuntagami-demo-data/sample/test.txt
 ```
