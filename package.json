@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "node ./dist/index.js",
-    "local": "node -r dotenv/config -e \"console.log(require('./dist2/index').handler(require('./testdata/event.json')));\"",
+    "local": "node -r dotenv/config -e \"console.log(require('./dist/index').handler(require('./testdata/event.json')));\"",
     "format": "prettier --write src",
     "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}' && prettier --check src",
     "prebuild": "rm -rf dist",
