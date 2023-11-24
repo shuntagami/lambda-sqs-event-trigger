@@ -7,7 +7,6 @@
     "resolveJsonModule": true,
     "sourceMap": true,
     "outDir": "./dist2",
-    "importsNotUsedAsValues": "error",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitReturns": true,
