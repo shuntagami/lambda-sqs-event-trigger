@@ -6,7 +6,7 @@ When messages sent to SQS, Lambda Consumer triggered, and upload message body to
 
 ## Requirements
 
-Terraform, node v16.19.0
+Terraform, Node.js
 
 ## Build
 
